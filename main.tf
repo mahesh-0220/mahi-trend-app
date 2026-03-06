@@ -15,7 +15,7 @@ resource "aws_internet_gateway" "igw" {
   tags   = { Name = "trend-igw" }
 }
 
-# 3. Create Public Subnets (Multi-AZ required for EKS)
+# 3. Create Public Subnets 
 resource "aws_subnet" "public_sub" {
   vpc_id                  = aws_vpc.trend_vpc.id
   cidr_block              = "10.0.1.0/24"
