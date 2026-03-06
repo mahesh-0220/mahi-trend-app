@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        // Correct DockerHub username: maheshdevops0220
+    
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
         IMAGE_NAME = "maheshdevops0220/trend-app"
     }
 
     stages {
-        // Stage removed because Jenkins does this automatically for 'Pipeline from SCM'
+        
         
         stage('Build Docker Image') {
             steps {
