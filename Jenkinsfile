@@ -5,7 +5,7 @@ pipeline {
         // This 'dockerhub-creds' MUST match the ID you created in Jenkins Credentials
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
         // Using your corrected DockerHub username: admin
-        IMAGE_NAME = "admin/trend-app"
+        IMAGE_NAME = "maheshdevops0220/trend-app"
     }
     
     stages {
