@@ -2,7 +2,7 @@
 .git
 .gitignore
 
-# Ignore Terraform files (you don't want your cloud configs inside your app)
+# Ignore Terraform files 
 .terraform/
 *.tfstate
 *.tfstate.backup
