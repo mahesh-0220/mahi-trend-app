@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: trend-app-deployment
 spec:
-  replicas: 1  # Strictly 1 for free tier
+  replicas: 1  
   selector:
     matchLabels:
       app: trend-react-app
