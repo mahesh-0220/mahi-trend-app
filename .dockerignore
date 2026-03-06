@@ -1,0 +1,16 @@
+# Ignore Git metadata
+.git
+.gitignore
+
+# Ignore Terraform files (you don't want your cloud configs inside your app)
+.terraform/
+*.tfstate
+*.tfstate.backup
+main.tf
+
+# Ignore local OS junk
+.DS_Store
+Thumbs.db
+
+# Ignore documentation
+README.md
