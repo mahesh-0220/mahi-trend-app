@@ -8,5 +8,5 @@ spec:
     app: trend-react-app
   ports:
     - protocol: TCP
-      port: 3000         # The port you type in the browser
+      port: 3000         # The port I type in the browser
       targetPort: 3000 # The port inside the container
