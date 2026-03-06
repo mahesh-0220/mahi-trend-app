@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trend-app-deployment
+spec:
+  replicas: 1  # Strictly 1 for free tier
+  selector:
+    matchLabels:
+      app: trend-react-app
+  template:
+    metadata:
+      labels:
+        app: trend-react-app
+    spec:
+      containers:
+      - name: trend-app
+        image: maheshdevops0220/trend-app:latest
+        ports:
+        - containerPort: 3000
