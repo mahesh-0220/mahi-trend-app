@@ -2,14 +2,11 @@ pipeline {
     agent any
 
     environment {
-    
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
         IMAGE_NAME = "maheshdevops0220/trend-app"
     }
 
     stages {
-        
-        
         stage('Build Docker Image') {
             steps {
                 script {
@@ -26,14 +23,24 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy to EKS') {
+            steps {
+                script {
+                    sh "kubectl apply -f deployment.yaml"
+                    sh "kubectl apply -f service.yaml"
+                    sh "kubectl rollout restart deployment/trend-store"
+                }
+            }
+        }
     }
 
     post {
         success {
-            echo "Successfully built and pushed ${IMAGE_NAME} to DockerHub!"
+            echo "Successfully built, pushed, and deployed ${IMAGE_NAME} to EKS!"
         }
         failure {
-            echo "Build failed. Please check the Console Output in Jenkins."
+            echo "Build failed. Please check the Console Output."
         }
     }
 }
